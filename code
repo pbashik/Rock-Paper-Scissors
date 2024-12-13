@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class RockPaperScissorsSimple {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Rock, Paper, Scissors!");
+        System.out.println("Type Rock, Paper, or Scissors:");
+
+        String playerChoice = scanner.nextLine();
+
+    
+        int computerChoice = (int) (Math.random() * 3);
+        String[] choices = {"Rock", "Paper", "Scissors"};
+        String computerMove = choices[computerChoice];
+
+        
+        System.out.println("Computer chose: " + computerMove);
+
+        if (playerChoice.equalsIgnoreCase(computerMove)) {
+            System.out.println("It's a tie!");
+        } else if (playerChoice.equalsIgnoreCase("Rock") && computerMove.equals("Scissors") ||
+                   playerChoice.equalsIgnoreCase("Paper") && computerMove.equals("Rock") ||
+                   playerChoice.equalsIgnoreCase("Scissors") && computerMove.equals("Paper")) {
+            System.out.println("You win!");
+        } else {
+            System.out.println("Computer wins!");
+        }
+
+        scanner.close();
+    }
+}
